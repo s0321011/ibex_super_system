@@ -70,7 +70,7 @@ fusesoc --cores-root=. run --target=synth --run lowrisc:ibex:super_system
 Or use the Vivado GUI
 
 ```
-make -C ./build/lowrisc_ibex_super_system_0/synth-vivado/ build-gui
+make -C ./build/lowrisc_ibex_super_system_0/synth-vivado/ pgm
 ```
 
 ## Loading a program
