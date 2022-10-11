@@ -7,14 +7,17 @@ OUTPUT_ARCH(riscv)
 MEMORY
 {
     /* 60 kB should be enough for anybody... */
-    ram         : ORIGIN = 0x00100000, LENGTH = 0xE000 /* 56 kB */
-    stack       : ORIGIN = 0x0010E000, LENGTH = 0x2000  /* 4 kB */
+    rom         : ORIGIN = 0x00000000, LENGTH = 0x10000 /* 56 kB */
+    ram         : ORIGIN = 0x20000000, LENGTH = 0xE000 /* 56 kB */
+/*    stack       : ORIGIN = 0x2000E000, LENGTH = 0x2000  /* 4 kB */
 }
 
 /* Stack information variables */
 _min_stack      = 0x1000;   /* 4K - minimum stack space to reserve */
-_stack_len     = LENGTH(stack);
-_stack_start   = ORIGIN(stack) + LENGTH(stack);
+_stack_len	= 0x2000;
+_stack_start	= 0x20010000;
+/*_stack_len     = LENGTH(stack);
+_stack_start   = ORIGIN(stack) + LENGTH(stack);*/
 
 _entry_point = _vectors_start + 0x80;
 ENTRY(_entry_point)
@@ -29,7 +32,7 @@ SECTIONS
         *(.text)
         *(.text.*)
         . = ALIGN(4);
-    }  > ram
+    }  > rom
 
     .rodata : {
         . = ALIGN(4);
@@ -39,20 +42,22 @@ SECTIONS
         *(.rodata);
         *(.rodata.*)
         . = ALIGN(4);
-    } > ram
+	PROVIDE( _data_lma = . );
+    } > rom
 
     .data : {
         . = ALIGN(4);
+	PROVIDE ( _data = . );
         /* Small data before large data */
         *(.sdata)
         *(.sdata.*)
         *(.data);
         *(.data.*)
         . = ALIGN(4);
-    } > ram
+	PROVIDE( _edata = . );
+    } > ram AT > rom
 
-    .bss :
-    {
+    .bss : {
         . = ALIGN(4);
         _bss_start = .;
         /* Small BSS before large BSS */
@@ -63,14 +68,15 @@ SECTIONS
         *(COMMON)
         _bss_end = .;
         . = ALIGN(4);
-    } > ram
+    } > ram AT > rom
 
     /* ensure there is enough room for stack */
     .stack (NOLOAD): {
         . = ALIGN(4);
+
         . = . + _min_stack ;
         . = ALIGN(4);
-        stack = . ;
-        _stack = . ;
-    } > stack
+        .stack = _stack_start;
+        _stack = _stack_start;
+    } > ram AT > rom
 }

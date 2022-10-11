@@ -47,6 +47,19 @@ reset_handler:
 _start:
   .global _start
 
+  // Load data section
+  la t0, _data_lma
+  la t1, _data
+  la t2, _edata
+  bgeu t1, t2, 2f
+1:
+  lw t2, 0(t0)
+  sw t2, 0(t1)
+  addi t0, t0, 4
+  addi t1, t1, 4
+  bltu t1, t2, 1b
+2:
+
   /* clear BSS */
   la x26, _bss_start
   la x27, _bss_end

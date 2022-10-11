@@ -8,8 +8,12 @@ module ibex_super_system #(
   output logic [GpoWidth-1:0] gp_o,
   output logic                uart_tx_o
 );
+  parameter logic [31:0] ROM_SIZE     = 64 * 1024; // 64 kB
+  parameter logic [31:0] ROM_START    = 32'h00000000;
+  parameter logic [31:0] ROM_MASK     = ~(ROM_SIZE-1);
+
   parameter logic [31:0] MEM_SIZE     = 64 * 1024; // 64 kB
-  parameter logic [31:0] MEM_START    = 32'h00100000;
+  parameter logic [31:0] MEM_START    = 32'h20000000;
   parameter logic [31:0] MEM_MASK     = ~(MEM_SIZE-1);
 
   parameter logic [31:0] GPIO_SIZE    = 4 * 1024; // 1kB
@@ -39,6 +43,7 @@ module ibex_super_system #(
   } bus_host_e;
 
   typedef enum int {
+    Rom,
     Ram,
     Gpio,
     Uart,
@@ -46,7 +51,7 @@ module ibex_super_system #(
     DbgDev
   } bus_device_e;
 
-  localparam int NrDevices = DBG ? 5 : 4;
+  localparam int NrDevices = DBG ? 6 : 5;
   localparam int NrHosts = DBG ? 2 : 1;
 
   // interrupts
@@ -81,6 +86,10 @@ module ibex_super_system #(
   logic [31:0] core_instr_rdata;
   logic        core_instr_sel_dbg;
 
+  logic        rom_instr_req;
+  logic [31:0] rom_instr_rdata;
+  logic        core_instr_sel_rom;
+
   logic        mem_instr_req;
   logic [31:0] mem_instr_rdata;
   logic        dbg_instr_req;
@@ -102,6 +111,8 @@ module ibex_super_system #(
   logic [31:0] cfg_device_addr_base [NrDevices];
   logic [31:0] cfg_device_addr_mask [NrDevices];
 
+  assign cfg_device_addr_base[Rom]    = ROM_START;
+  assign cfg_device_addr_mask[Rom]    = ROM_MASK;
   assign cfg_device_addr_base[Ram]    = MEM_START;
   assign cfg_device_addr_mask[Ram]    = MEM_MASK;
   assign cfg_device_addr_base[Gpio]   = GPIO_START;
@@ -118,6 +129,7 @@ module ibex_super_system #(
   end
 
   // Tie-off unused error signals
+  assign device_err[Rom] = 1'b0;
   assign device_err[Ram] = 1'b0;
   assign device_err[Gpio] = 1'b0;
   assign device_err[Uart] = 1'b0;
@@ -154,25 +166,31 @@ module ibex_super_system #(
     .cfg_device_addr_mask
   );
 
+  assign rom_instr_req =
+      core_instr_req & ((core_instr_addr & cfg_device_addr_mask[Rom]) == cfg_device_addr_base[Rom]);
+
   assign mem_instr_req =
       core_instr_req & ((core_instr_addr & cfg_device_addr_mask[Ram]) == cfg_device_addr_base[Ram]);
 
   assign dbg_instr_req =
       core_instr_req & ((core_instr_addr & cfg_device_addr_mask[DbgDev]) == cfg_device_addr_base[DbgDev]);
 
-  assign core_instr_gnt = mem_instr_req | (dbg_instr_req & ~device_req[DbgDev]);
+  assign core_instr_gnt = (rom_instr_req ? rom_instr_req : mem_instr_req) | (dbg_instr_req & ~device_req[DbgDev]);
 
   always @(posedge clk_sys_i or negedge rst_sys_ni) begin
+
     if (!rst_sys_ni) begin
       core_instr_rvalid  <= 1'b0;
       core_instr_sel_dbg <= 1'b0;
+      core_instr_sel_rom <= 1'b0;
     end else begin
       core_instr_rvalid  <= core_instr_gnt;
       core_instr_sel_dbg <= dbg_instr_req;
+      core_instr_sel_rom <= rom_instr_req;
     end
   end
 
-  assign core_instr_rdata = core_instr_sel_dbg ? dbg_slave_rdata : mem_instr_rdata;
+  assign core_instr_rdata = core_instr_sel_dbg ? dbg_slave_rdata : (core_instr_sel_rom ? rom_instr_rdata : mem_instr_rdata);
 
   assign rst_core_n = rst_sys_ni & ~ndmreset_req;
 
@@ -192,7 +210,7 @@ module ibex_super_system #(
 
      .hart_id_i             (32'b0),
      // First instruction executed is at 0x0 + 0x80
-     .boot_addr_i           (32'h00100000),
+     .boot_addr_i           (32'h00000000),
 
      .instr_req_o           (core_instr_req),
      .instr_gnt_i           (core_instr_gnt),
@@ -225,6 +243,30 @@ module ibex_super_system #(
      .alert_major_internal_o(),
      .alert_major_bus_o     (),
      .core_sleep_o          ()
+  );
+
+  ram_2p #(
+      .Depth(ROM_SIZE / 4),
+      .MemInitFile(SRAMInitFile)
+  ) u_rom (
+    .clk_i       (clk_sys_i),
+    .rst_ni      (rst_sys_ni),
+
+    .a_req_i     (device_req[Rom]),
+    .a_we_i      (device_we[Rom]),
+    .a_be_i      (device_be[Rom]),
+    .a_addr_i    (device_addr[Rom]),
+    .a_wdata_i   (device_wdata[Rom]),
+    .a_rvalid_o  (device_rvalid[Rom]),
+    .a_rdata_o   (device_rdata[Rom]),
+
+    .b_req_i     (rom_instr_req),
+    .b_we_i      (1'b0),
+    .b_be_i      (4'b0),
+    .b_addr_i    (core_instr_addr),
+    .b_wdata_i   (32'b0),
+    .b_rvalid_o  (),
+    .b_rdata_o   (rom_instr_rdata)
   );
 
   ram_2p #(
