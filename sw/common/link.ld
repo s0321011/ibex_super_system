@@ -46,6 +46,7 @@ SECTIONS
     .data : {
         . = ALIGN(4);
 	PROVIDE ( _data = . );
+        PROVIDE ( _gp = . + 0x800 );
         /* Small data before large data */
         *(.sdata)
         *(.sdata.*)

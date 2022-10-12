@@ -41,6 +41,8 @@ reset_handler:
   mv x30, x1
   mv x31, x1
 
+  /* global point initilization */
+  la gp, _gp
   /* stack initilization */
   la   x2, _stack_start
 
