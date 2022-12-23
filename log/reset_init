@@ -1,0 +1,97 @@
+Debug: 48964 2558779 gdb_server.c:401 gdb_log_incoming_packet(): [riscv.cpu] received packet: qRcmd,726573657420696e6974
+Debug: 48965 2558779 gdb_server.c:2764 gdb_query_packet(): qRcmd: reset init
+Debug: 48966 2558779 command.c:166 script_debug(): command - reset init
+Debug: 48967 2558779 target.c:1875 target_call_reset_callbacks(): target reset 3 (init)
+Debug: 48968 2558779 command.c:166 script_debug(): command - expr [catch {ocd_process_reset_inner $MODE} result] == 0
+Debug: 48969 2558779 command.c:166 script_debug(): command - target names
+Debug: 48970 2558779 command.c:166 script_debug(): command - riscv.cpu invoke-event reset-start
+Debug: 48971 2558779 command.c:166 script_debug(): command - transport select
+Debug: 48972 2558779 command.c:166 script_debug(): command - expr  [ string first "jtag" $_TRANSPORT ] != -1 
+Debug: 48973 2558779 command.c:166 script_debug(): command - jtag arp_init-reset
+Debug: 48974 2558779 core.c:1600 jtag_init_reset(): Initializing with hard TRST+SRST reset
+Debug: 48975 2558779 core.c:837 jtag_add_reset(): JTAG reset with TLR instead of TRST
+Debug: 48976 2558779 core.c:322 jtag_call_event_callbacks(): jtag event: TAP reset
+Debug: 48977 2558780 core.c:1503 jtag_init_inner(): Init JTAG chain
+Debug: 48978 2558780 core.c:322 jtag_call_event_callbacks(): jtag event: TAP reset
+Debug: 48979 2558781 core.c:1228 jtag_examine_chain(): DR scan interrogation for IDCODE/BYPASS
+Debug: 48980 2558781 core.c:322 jtag_call_event_callbacks(): jtag event: TAP reset
+Info : 48981 2558782 core.c:1127 jtag_examine_chain_display(): JTAG tap: riscv.cpu tap/device found: 0x0362d093 (mfg: 0x049 (Xilinx), part: 0x362d, ver: 0x0)
+Debug: 48982 2558782 gdb_server.c:417 gdb_log_outgoing_packet(): [riscv.cpu] sending packet: $O4a544147207461703a2072697363762e637075207461702f64657669636520666f756e643a203078303336326430393320286d66673a203078303439202858696c696e78292c20706172743a203078333632642c207665723a20307830290a#ea
+Debug: 48983 2558782 core.c:1358 jtag_validate_ircapture(): IR capture validation scan
+Debug: 48984 2558783 core.c:1415 jtag_validate_ircapture(): riscv.cpu: IR capture 0x35
+Debug: 48985 2558783 command.c:166 script_debug(): command - transport select
+Debug: 48986 2558783 command.c:166 script_debug(): command - expr  [ string first "jtag" $_TRANSPORT ] != -1 
+Debug: 48987 2558783 command.c:166 script_debug(): command - riscv.cpu cget -chain-position
+Debug: 48988 2558783 command.c:166 script_debug(): command - jtag tapisenabled riscv.cpu
+Debug: 48989 2558783 command.c:166 script_debug(): command - riscv.cpu invoke-event examine-start
+Debug: 48990 2558783 command.c:166 script_debug(): command - riscv.cpu arp_examine allow-defer
+Debug: 48991 2558783 riscv.c:1118 riscv_examine(): [riscv.cpu]
+Debug: 48992 2558783 riscv.c:1120 riscv_examine(): Target was already examined.
+Debug: 48993 2558783 command.c:166 script_debug(): command - riscv.cpu invoke-event examine-end
+Debug: 48994 2558783 command.c:166 script_debug(): command - riscv.cpu invoke-event reset-assert-pre
+Debug: 48995 2558783 command.c:166 script_debug(): command - transport select
+Debug: 48996 2558783 command.c:166 script_debug(): command - expr  [ string first "jtag" $_TRANSPORT ] != -1 
+Debug: 48997 2558783 command.c:166 script_debug(): command - riscv.cpu cget -chain-position
+Debug: 48998 2558783 command.c:166 script_debug(): command - jtag tapisenabled riscv.cpu
+Debug: 48999 2558783 command.c:166 script_debug(): command - riscv.cpu arp_reset assert 1
+Debug: 49000 2558783 target.c:2213 target_free_all_working_areas_restore(): freeing all working areas
+Debug: 49001 2558783 riscv.c:1340 riscv_assert_reset(): [0]
+Debug: 49002 2558783 riscv.c:3671 riscv_invalidate_register_cache(): [0]
+Debug: 49003 2558784 riscv-013.c:390 scan(): 41b w 80000003 @10 -> + 00000000 @00; 2i
+Debug: 49004 2558785 riscv-013.c:400 scan(): haltreq ndmreset dmactive -> 
+Debug: 49005 2558786 riscv-013.c:390 scan(): 41b - 00000000 @10 -> + 80000003 @10; 2i
+Debug: 49006 2558786 riscv-013.c:400 scan():  -> haltreq ndmreset dmactive
+Debug: 49007 2558786 riscv-013.c:4348 riscv013_invalidate_cached_debug_buffer(): [riscv.cpu] Invalidating progbuf cache
+Debug: 49008 2558786 command.c:166 script_debug(): command - riscv.cpu invoke-event reset-assert-post
+Debug: 49009 2558786 command.c:166 script_debug(): command - riscv.cpu invoke-event reset-deassert-pre
+Debug: 49010 2558786 command.c:166 script_debug(): command - transport select
+Debug: 49011 2558786 command.c:166 script_debug(): command - expr  [ string first "jtag" $_TRANSPORT ] != -1 
+Debug: 49012 2558786 command.c:166 script_debug(): command - riscv.cpu cget -chain-position
+Debug: 49013 2558786 command.c:166 script_debug(): command - jtag tapisenabled riscv.cpu
+Debug: 49014 2558786 command.c:166 script_debug(): command - riscv.cpu arp_reset deassert 1
+Debug: 49015 2558786 target.c:2213 target_free_all_working_areas_restore(): freeing all working areas
+Debug: 49016 2558786 riscv.c:1348 riscv_deassert_reset(): [0]
+Debug: 49017 2558788 riscv-013.c:390 scan(): 41b w 80000001 @10 -> + 00000000 @10; 2i
+Debug: 49018 2558788 riscv-013.c:400 scan(): haltreq dmactive -> 
+Debug: 49019 2558789 riscv-013.c:390 scan(): 41b - 00000000 @10 -> + 80000001 @10; 2i
+Debug: 49020 2558789 riscv-013.c:400 scan():  -> haltreq dmactive
+Debug: 49021 2558789 riscv-013.c:2410 deassert_reset(): Waiting for hart 0 to come out of reset.
+Debug: 49022 2558802 riscv-013.c:390 scan(): 41b r 00000000 @11 -> + 00000000 @10; 2i
+Debug: 49023 2558803 riscv-013.c:390 scan(): 41b - 00000000 @11 -> + 000c0382 @11; 2i
+Debug: 49024 2558803 riscv-013.c:400 scan():  ->  allhavereset anyhavereset allhalted anyhalted authenticated version=2
+Debug: 49025 2558804 riscv-013.c:390 scan(): 41b w 90000001 @10 -> + 00000000 @11; 2i
+Debug: 49026 2558805 riscv-013.c:400 scan(): haltreq dmactive ackhavereset -> 
+Debug: 49027 2558805 riscv-013.c:390 scan(): 41b - 00000000 @10 -> + 90000001 @10; 2i
+Debug: 49028 2558805 riscv-013.c:400 scan():  -> haltreq dmactive ackhavereset
+Debug: 49029 2558805 command.c:166 script_debug(): command - riscv.cpu invoke-event reset-deassert-post
+Debug: 49030 2558805 command.c:166 script_debug(): command - transport select
+Debug: 49031 2558805 command.c:166 script_debug(): command - expr  [ string first "jtag" $_TRANSPORT ] != -1 
+Debug: 49032 2558805 command.c:166 script_debug(): command - riscv.cpu cget -chain-position
+Debug: 49033 2558805 command.c:166 script_debug(): command - jtag tapisenabled riscv.cpu
+Debug: 49034 2558805 command.c:166 script_debug(): command - riscv.cpu was_examined
+Debug: 49035 2558805 command.c:166 script_debug(): command - riscv.cpu arp_waitstate halted 1000
+Debug: 49036 2558805 riscv.c:2199 riscv_openocd_poll(): polling all harts
+Debug: 49037 2558806 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 49038 2558806 riscv.c:2121 riscv_poll_hart(): [riscv.cpu] polling hart 0, target->state=2
+Debug: 49039 2558806 riscv-013.c:390 scan(): 41b r 00000000 @11 -> + 00000000 @10; 2i
+Debug: 49040 2558807 riscv-013.c:390 scan(): 41b - 00000000 @11 -> + 00000382 @11; 2i
+Debug: 49041 2558807 riscv-013.c:400 scan():  ->  allhalted anyhalted authenticated version=2
+Debug: 49042 2558807 riscv.c:1170 riscv_flush_registers(): [riscv.cpu]
+Debug: 49043 2558807 command.c:166 script_debug(): command - riscv.cpu curstate
+Debug: 49044 2558807 command.c:166 script_debug(): command - transport select
+Debug: 49045 2558807 command.c:166 script_debug(): command - expr  [ string first "jtag" $_TRANSPORT ] != -1 
+Debug: 49046 2558807 command.c:166 script_debug(): command - riscv.cpu cget -chain-position
+Debug: 49047 2558807 command.c:166 script_debug(): command - jtag tapisenabled riscv.cpu
+Debug: 49048 2558807 command.c:166 script_debug(): command - riscv.cpu was_examined
+Debug: 49049 2558807 command.c:166 script_debug(): command - riscv.cpu arp_waitstate halted 5000
+Debug: 49050 2558807 riscv.c:2199 riscv_openocd_poll(): polling all harts
+Debug: 49051 2558807 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 49052 2558807 riscv.c:2121 riscv_poll_hart(): [riscv.cpu] polling hart 0, target->state=2
+Debug: 49053 2558807 riscv-013.c:390 scan(): 41b r 00000000 @11 -> + 00000000 @11; 2i
+Debug: 49054 2558808 riscv-013.c:390 scan(): 41b - 00000000 @11 -> + 00000382 @11; 2i
+Debug: 49055 2558808 riscv-013.c:400 scan():  ->  allhalted anyhalted authenticated version=2
+Debug: 49056 2558808 riscv.c:1170 riscv_flush_registers(): [riscv.cpu]
+Debug: 49057 2558808 command.c:166 script_debug(): command - riscv.cpu invoke-event reset-init
+Debug: 49058 2558808 command.c:166 script_debug(): command - riscv.cpu invoke-event reset-end
+Debug: 49059 2558808 gdb_server.c:417 gdb_log_outgoing_packet(): [riscv.cpu] sending packet: $OK#9a
+
