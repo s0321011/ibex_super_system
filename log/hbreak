@@ -1,0 +1,876 @@
+Debug: 3288 345131969 gdb_server.c:401 gdb_log_incoming_packet(): [riscv.cpu] received packet: m4c6,2
+Debug: 3289 345131969 gdb_server.c:1536 gdb_read_memory_packet(): addr: 0x00000000000004c6, len: 0x00000002
+Debug: 3290 345131969 target.c:2487 target_read_buffer(): reading buffer of 2 byte at 0x000004c6
+Debug: 3291 345131969 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3292 345131969 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register priv
+Debug: 3293 345131969 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3294 345131969 riscv-013.c:775 execute_abstract_command(): command=0x2207b0; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7b0
+Debug: 3295 345131972 riscv-013.c:390 scan(): 41b w 002207b0 @17 -> + 00000000 @04; 2i
+Debug: 3296 345131973 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207b0 @17; 2i
+Debug: 3297 345131973 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3298 345131974 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3299 345131975 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3300 345131976 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 4000b0c3 @04; 2i
+Debug: 3301 345131976 riscv-013.c:1458 register_read_direct(): {0} dcsr = 0x4000b0c3
+Debug: 3302 345131976 riscv.c:3814 riscv_get_register(): [riscv.cpu] priv: 3
+Debug: 3303 345131976 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register mstatus
+Debug: 3304 345131976 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3305 345131976 riscv-013.c:775 execute_abstract_command(): command=0x220300; access register, size=32, postexec=0, transfer=1, write=0, regno=0x300
+Debug: 3306 345131989 riscv-013.c:390 scan(): 41b w 00220300 @17 -> + 00000000 @04; 2i
+Debug: 3307 345131991 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00220300 @17; 2i
+Debug: 3308 345131991 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3309 345131991 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3310 345131992 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3311 345131994 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000088 @04; 2i
+Debug: 3312 345131994 riscv-013.c:1458 register_read_direct(): {0} mstatus = 0x88
+Debug: 3313 345131994 riscv.c:3814 riscv_get_register(): [riscv.cpu] mstatus: 88
+Debug: 3314 345131994 riscv.c:1593 riscv_mmu(): SATP/MMU ignored in Machine mode (mstatus=0x88).
+Debug: 3315 345131994 riscv-013.c:2886 mem_should_skip_sysbus(): Skipping mem read via system bus - unsupported size.
+Debug: 3316 345131994 riscv-013.c:3416 read_memory_progbuf(): reading 1 words of 2 bytes from 0x4c6
+Debug: 3317 345131994 program.c:35 riscv_program_write(): debug_buffer[00] = DASM(0x0000100f)
+Debug: 3318 345131994 riscv-013.c:4330 riscv013_write_debug_buffer(): cache hit for 0x100f @0
+Debug: 3319 345131994 program.c:35 riscv_program_write(): debug_buffer[01] = DASM(0x0000000f)
+Debug: 3320 345131994 riscv-013.c:4330 riscv013_write_debug_buffer(): cache hit for 0xf @1
+Debug: 3321 345131994 program.c:35 riscv_program_write(): debug_buffer[02] = DASM(0x00100073)
+Debug: 3322 345131994 riscv-013.c:4330 riscv013_write_debug_buffer(): cache hit for 0x100073 @2
+Debug: 3323 345131994 riscv-013.c:775 execute_abstract_command(): command=0x241000; access register, size=32, postexec=1, transfer=0, write=0, regno=0x1000
+Debug: 3324 345131995 riscv-013.c:390 scan(): 41b w 00241000 @17 -> + 00000000 @04; 2i
+Debug: 3325 345131995 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00241000 @17; 2i
+Debug: 3326 345131996 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3327 345131996 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3328 345131996 riscv.c:3829 riscv_save_register(): [riscv.cpu] save fp
+Debug: 3329 345131996 riscv.c:3793 riscv_get_register(): [riscv.cpu] s0: 20010000 (cached)
+Debug: 3330 345131996 program.c:35 riscv_program_write(): debug_buffer[00] = DASM(0x00041403)
+Debug: 3331 345131997 riscv-013.c:390 scan(): 41b w 00041403 @20 -> + 00000000 @16; 2i
+Debug: 3332 345131998 riscv-013.c:390 scan(): 41b - 00000000 @20 -> + 00041403 @20; 2i
+Debug: 3333 345131998 program.c:35 riscv_program_write(): debug_buffer[01] = DASM(0x00100073)
+Debug: 3334 345131999 riscv-013.c:390 scan(): 41b w 00100073 @21 -> + 00000000 @20; 2i
+Debug: 3335 345132000 riscv-013.c:390 scan(): 41b - 00000000 @21 -> + 00100073 @21; 2i
+Debug: 3336 345132001 riscv-013.c:390 scan(): 41b w 000004c6 @04 -> + 00000000 @21; 2i
+Debug: 3337 345132002 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 000004c6 @04; 2i
+Debug: 3338 345132002 riscv-013.c:775 execute_abstract_command(): command=0x271008; access register, size=32, postexec=1, transfer=1, write=1, regno=0x1008
+Debug: 3339 345132003 riscv-013.c:390 scan(): 41b w 00271008 @17 -> + 00000000 @04; 2i
+Debug: 3340 345132004 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00271008 @17; 2i
+Debug: 3341 345132005 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3342 345132005 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3343 345132005 riscv-013.c:775 execute_abstract_command(): command=0x221008; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1008
+Debug: 3344 345132007 riscv-013.c:390 scan(): 41b w 00221008 @17 -> + 00000000 @16; 2i
+Debug: 3345 345132007 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221008 @17; 2i
+Debug: 3346 345132008 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3347 345132008 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3348 345132009 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3349 345132009 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00002837 @04; 2i
+Debug: 3350 345132009 riscv-013.c:1458 register_read_direct(): {0} s0 = 0x2837
+Debug: 3351 345132009 riscv-013.c:2496 log_memory_access(): M[0x4c6] reads 0x2837
+Debug: 3352 345132009 riscv-013.c:2837 log_mem_access_result(): Succeeded to read memory via program buffer.
+Debug: 3353 345132009 gdb_server.c:417 gdb_log_outgoing_packet(): [riscv.cpu] sending packet: $3728#d4
+
+
+
+
+Debug: 3354 345143663 gdb_server.c:401 gdb_log_incoming_packet(): [riscv.cpu] received packet: Z1,4c6,2
+Debug: 3355 345143663 gdb_server.c:1748 gdb_breakpoint_watchpoint_packet(): [riscv.cpu]
+Debug: 3356 345143663 riscv.c:799 riscv_add_breakpoint(): [0] @0x4c6
+Debug: 3357 345143663 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register tselect
+Debug: 3358 345143663 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3359 345143663 riscv-013.c:775 execute_abstract_command(): command=0x2207a0; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7a0
+Debug: 3360 345143664 riscv-013.c:390 scan(): 41b w 002207a0 @17 -> + 00000000 @04; 2i
+Debug: 3361 345143664 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207a0 @17; 2i
+Debug: 3362 345143664 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3363 345143664 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3364 345143665 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3365 345143666 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3366 345143666 riscv-013.c:1458 register_read_direct(): {0} tselect = 0x0
+Debug: 3367 345143666 riscv.c:3814 riscv_get_register(): [riscv.cpu] tselect: 0
+Debug: 3368 345143666 riscv.c:3751 riscv_set_register(): [riscv.cpu] tselect <- 0
+Debug: 3369 345143666 riscv-013.c:4074 riscv013_set_register(): [0] writing 0x0 to register tselect
+Debug: 3370 345143666 riscv-013.c:1293 register_write_direct(): {0} tselect <- 0x0
+Debug: 3371 345143666 riscv-013.c:390 scan(): 41b w 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3372 345143667 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3373 345143667 riscv-013.c:775 execute_abstract_command(): command=0x2307a0; access register, size=32, postexec=0, transfer=1, write=1, regno=0x7a0
+Debug: 3374 345143668 riscv-013.c:390 scan(): 41b w 002307a0 @17 -> + 00000000 @04; 2i
+Debug: 3375 345143668 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002307a0 @17; 2i
+Debug: 3376 345143669 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3377 345143669 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3378 345143669 riscv.c:3772 riscv_set_register(): [riscv.cpu] wrote 0x0 to tselect valid=0
+Debug: 3379 345143669 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register tdata1
+Debug: 3380 345143669 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3381 345143669 riscv-013.c:775 execute_abstract_command(): command=0x2207a1; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7a1
+Debug: 3382 345143669 riscv-013.c:390 scan(): 41b w 002207a1 @17 -> + 00000000 @16; 2i
+Debug: 3383 345143670 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207a1 @17; 2i
+Debug: 3384 345143671 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3385 345143671 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3386 345143671 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3387 345143672 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 28001048 @04; 2i
+Debug: 3388 345143672 riscv-013.c:1458 register_read_direct(): {0} tdata1 = 0x28001048
+Debug: 3389 345143672 riscv.c:3814 riscv_get_register(): [riscv.cpu] tdata1: 28001048
+Debug: 3390 345143672 riscv.c:3751 riscv_set_register(): [riscv.cpu] tdata1 <- 2800104c
+Debug: 3391 345143672 riscv-013.c:4074 riscv013_set_register(): [0] writing 0x2800104c to register tdata1
+Debug: 3392 345143672 riscv-013.c:1293 register_write_direct(): {0} tdata1 <- 0x2800104c
+Debug: 3393 345143672 riscv-013.c:390 scan(): 41b w 2800104c @04 -> + 00000000 @04; 2i
+Debug: 3394 345143673 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 2800104c @04; 2i
+Debug: 3395 345143673 riscv-013.c:775 execute_abstract_command(): command=0x2307a1; access register, size=32, postexec=0, transfer=1, write=1, regno=0x7a1
+Debug: 3396 345143673 riscv-013.c:390 scan(): 41b w 002307a1 @17 -> + 00000000 @04; 2i
+Debug: 3397 345143674 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002307a1 @17; 2i
+Debug: 3398 345143675 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3399 345143675 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3400 345143675 riscv.c:3772 riscv_set_register(): [riscv.cpu] wrote 0x2800104c to tdata1 valid=0
+Debug: 3401 345143675 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register tdata1
+Debug: 3402 345143675 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3403 345143675 riscv-013.c:775 execute_abstract_command(): command=0x2207a1; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7a1
+Debug: 3404 345143675 riscv-013.c:390 scan(): 41b w 002207a1 @17 -> + 00000000 @16; 2i
+Debug: 3405 345143676 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207a1 @17; 2i
+Debug: 3406 345143677 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3407 345143677 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3408 345143677 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3409 345143678 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 2800104c @04; 2i
+Debug: 3410 345143678 riscv-013.c:1458 register_read_direct(): {0} tdata1 = 0x2800104c
+Debug: 3411 345143678 riscv.c:3814 riscv_get_register(): [riscv.cpu] tdata1: 2800104c
+Debug: 3412 345143678 riscv.c:553 maybe_add_trigger_t2(): tdata1=0x2800104c
+Debug: 3413 345143678 riscv.c:3751 riscv_set_register(): [riscv.cpu] tdata2 <- 4c6
+Debug: 3414 345143678 riscv-013.c:4074 riscv013_set_register(): [0] writing 0x4c6 to register tdata2
+Debug: 3415 345143678 riscv-013.c:1293 register_write_direct(): {0} tdata2 <- 0x4c6
+Debug: 3416 345143678 riscv-013.c:390 scan(): 41b w 000004c6 @04 -> + 00000000 @04; 2i
+Debug: 3417 345143679 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 000004c6 @04; 2i
+Debug: 3418 345143679 riscv-013.c:775 execute_abstract_command(): command=0x2307a2; access register, size=32, postexec=0, transfer=1, write=1, regno=0x7a2
+Debug: 3419 345143679 riscv-013.c:390 scan(): 41b w 002307a2 @17 -> + 00000000 @04; 2i
+Debug: 3420 345143679 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002307a2 @17; 2i
+Debug: 3421 345143680 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3422 345143680 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3423 345143680 riscv.c:3772 riscv_set_register(): [riscv.cpu] wrote 0x4c6 to tdata2 valid=0
+Debug: 3424 345143680 riscv.c:663 add_trigger(): [0] Using trigger 0 (type 2) for bp 3
+Debug: 3425 345143680 riscv.c:3751 riscv_set_register(): [riscv.cpu] tselect <- 0
+Debug: 3426 345143680 riscv-013.c:4074 riscv013_set_register(): [0] writing 0x0 to register tselect
+Debug: 3427 345143680 riscv-013.c:1293 register_write_direct(): {0} tselect <- 0x0
+Debug: 3428 345143681 riscv-013.c:390 scan(): 41b w 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3429 345143681 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3430 345143681 riscv-013.c:775 execute_abstract_command(): command=0x2307a0; access register, size=32, postexec=0, transfer=1, write=1, regno=0x7a0
+Debug: 3431 345143681 riscv-013.c:390 scan(): 41b w 002307a0 @17 -> + 00000000 @04; 2i
+Debug: 3432 345143681 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002307a0 @17; 2i
+Debug: 3433 345143682 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3434 345143682 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3435 345143682 riscv.c:3772 riscv_set_register(): [riscv.cpu] wrote 0x0 to tselect valid=0
+Debug: 3436 345143682 breakpoints.c:100 breakpoint_add_internal(): [0] added hardware breakpoint at 0x000004c6 of length 0x00000002, (BPID: 3)
+Debug: 3437 345143682 gdb_server.c:417 gdb_log_outgoing_packet(): [riscv.cpu] sending packet: $OK#9a
+Debug: 3438 345143682 gdb_server.c:401 gdb_log_incoming_packet(): [riscv.cpu] received packet: vCont;c
+Debug: 3439 345143682 gdb_server.c:3007 gdb_handle_vcont_packet(): target riscv.cpu continue
+Debug: 3440 345143682 target.c:1856 target_call_event_callbacks(): target event 3 (resume-start) for core riscv.cpu
+Debug: 3441 345143682 riscv.c:1521 riscv_resume(): handle_breakpoints=0
+Debug: 3442 345143682 riscv.c:1446 resume_prep(): [0]
+Debug: 3443 345143682 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3444 345143682 program.c:35 riscv_program_write(): debug_buffer[00] = DASM(0x0000100f)
+Debug: 3445 345143683 riscv-013.c:390 scan(): 41b w 0000100f @20 -> + 00000000 @16; 2i
+Debug: 3446 345143683 riscv-013.c:390 scan(): 41b - 00000000 @20 -> + 0000100f @20; 2i
+Debug: 3447 345143683 program.c:35 riscv_program_write(): debug_buffer[01] = DASM(0x0000000f)
+Debug: 3448 345143684 riscv-013.c:390 scan(): 41b w 0000000f @21 -> + 00000000 @20; 2i
+Debug: 3449 345143685 riscv-013.c:390 scan(): 41b - 00000000 @21 -> + 0000000f @21; 2i
+Debug: 3450 345143685 program.c:35 riscv_program_write(): debug_buffer[02] = DASM(0x00100073)
+Debug: 3451 345143685 riscv-013.c:4330 riscv013_write_debug_buffer(): cache hit for 0x100073 @2
+Debug: 3452 345143685 riscv-013.c:775 execute_abstract_command(): command=0x241000; access register, size=32, postexec=1, transfer=0, write=0, regno=0x1000
+Debug: 3453 345143686 riscv-013.c:390 scan(): 41b w 00241000 @17 -> + 00000000 @21; 2i
+Debug: 3454 345143687 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00241000 @17; 2i
+Debug: 3455 345143687 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3456 345143687 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3457 345143687 riscv-013.c:775 execute_abstract_command(): command=0x2207b0; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7b0
+Debug: 3458 345143688 riscv-013.c:390 scan(): 41b w 002207b0 @17 -> + 00000000 @16; 2i
+Debug: 3459 345143689 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207b0 @17; 2i
+Debug: 3460 345143689 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3461 345143689 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3462 345143690 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3463 345143691 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 4000b0c3 @04; 2i
+Debug: 3464 345143691 riscv-013.c:1458 register_read_direct(): {0} dcsr = 0x4000b0c3
+Debug: 3465 345143691 riscv.c:3751 riscv_set_register(): [riscv.cpu] dcsr <- 4000b0c3
+Debug: 3466 345143691 riscv-013.c:4074 riscv013_set_register(): [0] writing 0x4000b0c3 to register dcsr
+Debug: 3467 345143691 riscv-013.c:1293 register_write_direct(): {0} dcsr <- 0x4000b0c3
+Debug: 3468 345143691 riscv-013.c:390 scan(): 41b w 4000b0c3 @04 -> + 00000000 @04; 2i
+Debug: 3469 345143691 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 4000b0c3 @04; 2i
+Debug: 3470 345143691 riscv-013.c:775 execute_abstract_command(): command=0x2307b0; access register, size=32, postexec=0, transfer=1, write=1, regno=0x7b0
+Debug: 3471 345143691 riscv-013.c:390 scan(): 41b w 002307b0 @17 -> + 00000000 @04; 2i
+Debug: 3472 345143692 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002307b0 @17; 2i
+Debug: 3473 345143692 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3474 345143692 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3475 345143692 riscv.c:3772 riscv_set_register(): [riscv.cpu] wrote 0x4000b0c3 to dcsr valid=0
+Debug: 3476 345143692 riscv.c:1170 riscv_flush_registers(): [riscv.cpu]
+Debug: 3477 345143692 riscv.c:1176 riscv_flush_registers(): [riscv.cpu] fp is dirty; write back 0x20010000
+Debug: 3478 345143692 riscv-013.c:4074 riscv013_set_register(): [0] writing 0x20010000 to register s0
+Debug: 3479 345143692 riscv-013.c:1293 register_write_direct(): {0} s0 <- 0x20010000
+Debug: 3480 345143692 riscv-013.c:390 scan(): 41b w 20010000 @04 -> + 00000000 @16; 2i
+Debug: 3481 345143692 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 20010000 @04; 2i
+Debug: 3482 345143692 riscv-013.c:775 execute_abstract_command(): command=0x231008; access register, size=32, postexec=0, transfer=1, write=1, regno=0x1008
+Debug: 3483 345143693 riscv-013.c:390 scan(): 41b w 00231008 @17 -> + 00000000 @04; 2i
+Debug: 3484 345143693 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00231008 @17; 2i
+Debug: 3485 345143693 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3486 345143693 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3487 345143693 riscv.c:1473 resume_prep(): [0] mark as prepped
+Debug: 3488 345143693 riscv.c:3547 riscv_resume_go_all_harts(): [riscv.cpu] resuming hart
+Debug: 3489 345143693 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3490 345143694 riscv-013.c:390 scan(): 41b r 00000000 @11 -> + 00000000 @16; 2i
+Debug: 3491 345143694 riscv-013.c:390 scan(): 41b - 00000000 @11 -> + 00030382 @11; 2i
+Debug: 3492 345143694 riscv-013.c:400 scan():  ->  allresumeack anyresumeack allhalted anyhalted authenticated version=2
+Debug: 3493 345143694 riscv-013.c:4780 riscv013_step_or_resume_current_hart(): resuming hart 0 (for step?=0)
+Debug: 3494 345143694 riscv-013.c:390 scan(): 41b r 00000000 @11 -> + 00000000 @11; 2i
+Debug: 3495 345143695 riscv-013.c:390 scan(): 41b - 00000000 @11 -> + 00030382 @11; 2i
+Debug: 3496 345143695 riscv-013.c:400 scan():  ->  allresumeack anyresumeack allhalted anyhalted authenticated version=2
+Debug: 3497 345143695 riscv.c:1170 riscv_flush_registers(): [riscv.cpu]
+Debug: 3498 345143695 riscv-013.c:390 scan(): 41b w 40000001 @10 -> + 00000000 @11; 2i
+Debug: 3499 345143695 riscv-013.c:400 scan():  resumereq dmactive -> 
+Debug: 3500 345143695 riscv-013.c:390 scan(): 41b - 00000000 @10 -> + 40000001 @10; 2i
+Debug: 3501 345143695 riscv-013.c:400 scan():  ->  resumereq dmactive
+Debug: 3502 345143696 riscv-013.c:390 scan(): 41b r 00000000 @11 -> + 00000000 @10; 2i
+Debug: 3503 345143696 riscv-013.c:390 scan(): 41b - 00000000 @11 -> + 00030382 @11; 2i
+Debug: 3504 345143696 riscv-013.c:400 scan():  ->  allresumeack anyresumeack allhalted anyhalted authenticated version=2
+Debug: 3505 345143697 riscv-013.c:390 scan(): 41b w 00000001 @10 -> + 00000000 @11; 2i
+Debug: 3506 345143697 riscv-013.c:400 scan():  dmactive -> 
+Debug: 3507 345143698 riscv-013.c:390 scan(): 41b - 00000000 @10 -> + 00000001 @10; 2i
+Debug: 3508 345143698 riscv-013.c:400 scan():  ->  dmactive
+Debug: 3509 345143698 riscv.c:3671 riscv_invalidate_register_cache(): [0]
+Debug: 3510 345143698 target.c:1856 target_call_event_callbacks(): target event 2 (resumed) for core riscv.cpu
+Debug: 3511 345143698 target.c:1856 target_call_event_callbacks(): target event 4 (resume-end) for core riscv.cpu
+Debug: 3512 345143698 target.c:1856 target_call_event_callbacks(): target event 7 (gdb-start) for core riscv.cpu
+Debug: 3513 345145430 gdb_server.c:401 gdb_log_incoming_packet(): [riscv.cpu] received packet: <Ctrl-C>
+Debug: 3514 345145430 riscv.c:1300 riscv_halt(): [0] halting all harts
+Debug: 3515 345145430 riscv.c:1229 halt_prep(): [riscv.cpu] prep hart, debug_reason=5
+Debug: 3516 345145430 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3517 345145431 riscv-013.c:390 scan(): 41b r 00000000 @11 -> + 00000000 @10; 2i
+Debug: 3518 345145432 riscv-013.c:390 scan(): 41b - 00000000 @11 -> + 00030382 @11; 2i
+Debug: 3519 345145433 riscv-013.c:400 scan():  ->  allresumeack anyresumeack allhalted anyhalted authenticated version=2
+Debug: 3520 345145433 riscv.c:1234 halt_prep(): [riscv.cpu] Hart is already halted (debug_reason=5).
+Debug: 3521 345145433 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3522 345145433 riscv-013.c:390 scan(): 41b r 00000000 @11 -> + 00000000 @11; 2i
+Debug: 3523 345145434 riscv-013.c:390 scan(): 41b - 00000000 @11 -> + 00030382 @11; 2i
+Debug: 3524 345145435 riscv-013.c:400 scan():  ->  allresumeack anyresumeack allhalted anyhalted authenticated version=2
+Debug: 3525 345145435 riscv-013.c:775 execute_abstract_command(): command=0x2207b0; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7b0
+Debug: 3526 345145435 riscv-013.c:390 scan(): 41b w 002207b0 @17 -> + 00000000 @11; 2i
+Debug: 3527 345145436 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207b0 @17; 2i
+Debug: 3528 345145437 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3529 345145437 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3530 345145437 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3531 345145439 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 4000b083 @04; 2i
+Debug: 3532 345145439 riscv-013.c:1458 register_read_direct(): {0} dcsr = 0x4000b083
+Debug: 3533 345145439 riscv-013.c:4294 riscv013_halt_reason(): dcsr.cause: 0x2
+Debug: 3534 345145439 riscv-013.c:4304 riscv013_halt_reason(): {0} halted because of trigger
+Debug: 3535 345145439 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register tselect
+Debug: 3536 345145439 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3537 345145439 riscv-013.c:775 execute_abstract_command(): command=0x2207a0; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7a0
+Debug: 3538 345145440 riscv-013.c:390 scan(): 41b w 002207a0 @17 -> + 00000000 @04; 2i
+Debug: 3539 345145441 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207a0 @17; 2i
+Debug: 3540 345145442 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3541 345145442 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3542 345145443 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3543 345145444 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3544 345145444 riscv-013.c:1458 register_read_direct(): {0} tselect = 0x0
+Debug: 3545 345145444 riscv.c:3814 riscv_get_register(): [riscv.cpu] tselect: 0
+Debug: 3546 345145444 riscv.c:3751 riscv_set_register(): [riscv.cpu] tselect <- 0
+Debug: 3547 345145444 riscv-013.c:4074 riscv013_set_register(): [0] writing 0x0 to register tselect
+Debug: 3548 345145444 riscv-013.c:1293 register_write_direct(): {0} tselect <- 0x0
+Debug: 3549 345145445 riscv-013.c:390 scan(): 41b w 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3550 345145446 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3551 345145446 riscv-013.c:775 execute_abstract_command(): command=0x2307a0; access register, size=32, postexec=0, transfer=1, write=1, regno=0x7a0
+Debug: 3552 345145446 riscv-013.c:390 scan(): 41b w 002307a0 @17 -> + 00000000 @04; 2i
+Debug: 3553 345145448 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002307a0 @17; 2i
+Debug: 3554 345145450 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3555 345145450 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3556 345145450 riscv.c:3772 riscv_set_register(): [riscv.cpu] wrote 0x0 to tselect valid=0
+Debug: 3557 345145450 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register tdata1
+Debug: 3558 345145450 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3559 345145450 riscv-013.c:775 execute_abstract_command(): command=0x2207a1; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7a1
+Debug: 3560 345145451 riscv-013.c:390 scan(): 41b w 002207a1 @17 -> + 00000000 @16; 2i
+Debug: 3561 345145451 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207a1 @17; 2i
+Debug: 3562 345145452 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3563 345145452 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3564 345145452 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3565 345145459 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 2800104c @04; 2i
+Debug: 3566 345145459 riscv-013.c:1458 register_read_direct(): {0} tdata1 = 0x2800104c
+Debug: 3567 345145459 riscv.c:3814 riscv_get_register(): [riscv.cpu] tdata1: 2800104c
+Debug: 3568 345145459 riscv.c:3751 riscv_set_register(): [riscv.cpu] tselect <- 0
+Debug: 3569 345145459 riscv-013.c:4074 riscv013_set_register(): [0] writing 0x0 to register tselect
+Debug: 3570 345145459 riscv-013.c:1293 register_write_direct(): {0} tselect <- 0x0
+Debug: 3571 345145460 riscv-013.c:390 scan(): 41b w 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3572 345145461 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3573 345145461 riscv-013.c:775 execute_abstract_command(): command=0x2307a0; access register, size=32, postexec=0, transfer=1, write=1, regno=0x7a0
+Debug: 3574 345145462 riscv-013.c:390 scan(): 41b w 002307a0 @17 -> + 00000000 @04; 2i
+Debug: 3575 345145463 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002307a0 @17; 2i
+Debug: 3576 345145464 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3577 345145464 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3578 345145464 riscv.c:3772 riscv_set_register(): [riscv.cpu] wrote 0x0 to tselect valid=0
+Debug: 3579 345145464 riscv.c:1220 set_debug_reason(): [riscv.cpu] debug_reason=2
+Debug: 3580 345145464 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3581 345145465 riscv-013.c:390 scan(): 41b r 00000000 @11 -> + 00000000 @16; 2i
+Debug: 3582 345145466 riscv-013.c:390 scan(): 41b - 00000000 @11 -> + 00030382 @11; 2i
+Debug: 3583 345145466 riscv-013.c:400 scan():  ->  allresumeack anyresumeack allhalted anyhalted authenticated version=2
+Debug: 3584 345145466 riscv.c:1258 riscv_halt_go_all_harts(): [riscv.cpu] Hart is already halted.
+Debug: 3585 345145466 target.c:1856 target_call_event_callbacks(): target event 0 (gdb-halt) for core riscv.cpu
+Debug: 3586 345145466 riscv.c:1020 riscv_hit_watchpoint(): Current hartid = 0
+Debug: 3587 345145466 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register dpc
+Debug: 3588 345145466 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3589 345145466 riscv-013.c:775 execute_abstract_command(): command=0x2207b1; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7b1
+Debug: 3590 345145467 riscv-013.c:390 scan(): 41b w 002207b1 @17 -> + 00000000 @11; 2i
+Debug: 3591 345145468 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207b1 @17; 2i
+Debug: 3592 345145469 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3593 345145469 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3594 345145470 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3595 345145471 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 000004c6 @04; 2i
+Debug: 3596 345145471 riscv-013.c:1458 register_read_direct(): {0} dpc = 0x4c6
+Debug: 3597 345145471 riscv.c:3814 riscv_get_register(): [riscv.cpu] dpc: 4c6
+Debug: 3598 345145471 riscv.c:1034 riscv_hit_watchpoint(): dpc is 0x4c6
+Debug: 3599 345145471 target.c:2487 target_read_buffer(): reading buffer of 4 byte at 0x000004c6
+Debug: 3600 345145471 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3601 345145471 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register priv
+Debug: 3602 345145471 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3603 345145471 riscv-013.c:775 execute_abstract_command(): command=0x2207b0; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7b0
+Debug: 3604 345145472 riscv-013.c:390 scan(): 41b w 002207b0 @17 -> + 00000000 @04; 2i
+Debug: 3605 345145473 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207b0 @17; 2i
+Debug: 3606 345145474 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3607 345145474 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3608 345145475 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3609 345145476 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 4000b083 @04; 2i
+Debug: 3610 345145476 riscv-013.c:1458 register_read_direct(): {0} dcsr = 0x4000b083
+Debug: 3611 345145476 riscv.c:3814 riscv_get_register(): [riscv.cpu] priv: 3
+Debug: 3612 345145476 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register mstatus
+Debug: 3613 345145476 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3614 345145476 riscv-013.c:775 execute_abstract_command(): command=0x220300; access register, size=32, postexec=0, transfer=1, write=0, regno=0x300
+Debug: 3615 345145477 riscv-013.c:390 scan(): 41b w 00220300 @17 -> + 00000000 @04; 2i
+Debug: 3616 345145479 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00220300 @17; 2i
+Debug: 3617 345145479 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3618 345145479 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3619 345145479 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3620 345145480 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00001880 @04; 2i
+Debug: 3621 345145480 riscv-013.c:1458 register_read_direct(): {0} mstatus = 0x1880
+Debug: 3622 345145480 riscv.c:3814 riscv_get_register(): [riscv.cpu] mstatus: 1880
+Debug: 3623 345145480 riscv.c:1593 riscv_mmu(): SATP/MMU ignored in Machine mode (mstatus=0x1880).
+Debug: 3624 345145480 riscv-013.c:2886 mem_should_skip_sysbus(): Skipping mem read via system bus - unsupported size.
+Debug: 3625 345145480 riscv-013.c:3416 read_memory_progbuf(): reading 2 words of 2 bytes from 0x4c6
+Debug: 3626 345145480 program.c:35 riscv_program_write(): debug_buffer[00] = DASM(0x0000100f)
+Debug: 3627 345145480 riscv-013.c:4330 riscv013_write_debug_buffer(): cache hit for 0x100f @0
+Debug: 3628 345145480 program.c:35 riscv_program_write(): debug_buffer[01] = DASM(0x0000000f)
+Debug: 3629 345145480 riscv-013.c:4330 riscv013_write_debug_buffer(): cache hit for 0xf @1
+Debug: 3630 345145480 program.c:35 riscv_program_write(): debug_buffer[02] = DASM(0x00100073)
+Debug: 3631 345145480 riscv-013.c:4330 riscv013_write_debug_buffer(): cache hit for 0x100073 @2
+Debug: 3632 345145480 riscv-013.c:775 execute_abstract_command(): command=0x241000; access register, size=32, postexec=1, transfer=0, write=0, regno=0x1000
+Debug: 3633 345145481 riscv-013.c:390 scan(): 41b w 00241000 @17 -> + 00000000 @04; 2i
+Debug: 3634 345145481 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00241000 @17; 2i
+Debug: 3635 345145482 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3636 345145482 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3637 345145482 riscv.c:3829 riscv_save_register(): [riscv.cpu] save fp
+Debug: 3638 345145482 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register s0
+Debug: 3639 345145482 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3640 345145482 riscv-013.c:775 execute_abstract_command(): command=0x221008; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1008
+Debug: 3641 345145482 riscv-013.c:390 scan(): 41b w 00221008 @17 -> + 00000000 @16; 2i
+Debug: 3642 345145483 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221008 @17; 2i
+Debug: 3643 345145483 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3644 345145483 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3645 345145484 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3646 345145484 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 2000ff50 @04; 2i
+Debug: 3647 345145484 riscv-013.c:1458 register_read_direct(): {0} s0 = 0x2000ff50
+Debug: 3648 345145484 riscv.c:3814 riscv_get_register(): [riscv.cpu] s0: 2000ff50
+Debug: 3649 345145484 riscv.c:3829 riscv_save_register(): [riscv.cpu] save s1
+Debug: 3650 345145484 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register s1
+Debug: 3651 345145484 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3652 345145484 riscv-013.c:775 execute_abstract_command(): command=0x221009; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1009
+Debug: 3653 345145485 riscv-013.c:390 scan(): 41b w 00221009 @17 -> + 00000000 @04; 2i
+Debug: 3654 345145485 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221009 @17; 2i
+Debug: 3655 345145486 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3656 345145486 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3657 345145486 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3658 345145487 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3659 345145487 riscv-013.c:1458 register_read_direct(): {0} s1 = 0x0
+Debug: 3660 345145487 riscv.c:3814 riscv_get_register(): [riscv.cpu] s1: 0
+Debug: 3661 345145487 program.c:35 riscv_program_write(): debug_buffer[00] = DASM(0x00041483)
+Debug: 3662 345145487 riscv-013.c:390 scan(): 41b w 00041483 @20 -> + 00000000 @04; 2i
+Debug: 3663 345145488 riscv-013.c:390 scan(): 41b - 00000000 @20 -> + 00041483 @20; 2i
+Debug: 3664 345145488 program.c:35 riscv_program_write(): debug_buffer[01] = DASM(0x00240413)
+Debug: 3665 345145488 riscv-013.c:390 scan(): 41b w 00240413 @21 -> + 00000000 @20; 2i
+Debug: 3666 345145488 riscv-013.c:390 scan(): 41b - 00000000 @21 -> + 00240413 @21; 2i
+Debug: 3667 345145488 program.c:35 riscv_program_write(): debug_buffer[02] = DASM(0x00100073)
+Debug: 3668 345145488 riscv-013.c:4330 riscv013_write_debug_buffer(): cache hit for 0x100073 @2
+Debug: 3669 345145488 riscv-013.c:1293 register_write_direct(): {0} s0 <- 0x4c6
+Debug: 3670 345145489 riscv-013.c:390 scan(): 41b w 000004c6 @04 -> + 00000000 @21; 2i
+Debug: 3671 345145489 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 000004c6 @04; 2i
+Debug: 3672 345145489 riscv-013.c:775 execute_abstract_command(): command=0x231008; access register, size=32, postexec=0, transfer=1, write=1, regno=0x1008
+Debug: 3673 345145489 riscv-013.c:390 scan(): 41b w 00231008 @17 -> + 00000000 @04; 2i
+Debug: 3674 345145489 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00231008 @17; 2i
+Debug: 3675 345145490 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3676 345145490 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3677 345145490 riscv-013.c:775 execute_abstract_command(): command=0x261009; access register, size=32, postexec=1, transfer=1, write=0, regno=0x1009
+Debug: 3678 345145490 riscv-013.c:390 scan(): 41b w 00261009 @17 -> + 00000000 @16; 2i
+Debug: 3679 345145490 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00261009 @17; 2i
+Debug: 3680 345145490 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3681 345145490 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3682 345145491 riscv-013.c:390 scan(): 41b w 00000001 @18 -> + 00000000 @16; 2i
+Debug: 3683 345145491 riscv-013.c:390 scan(): 41b - 00000000 @18 -> + 00000001 @18; 2i
+Debug: 3684 345145491 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @18; 2i
+Debug: 3685 345145491 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3686 345145492 riscv-013.c:390 scan(): 41b w 00000000 @18 -> + 00000000 @04; 2i
+Debug: 3687 345145492 riscv-013.c:390 scan(): 41b - 00000000 @18 -> + 00000000 @18; 2i
+Debug: 3688 345145492 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @18; 2i
+Debug: 3689 345145492 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00002837 @04; 2i
+Debug: 3690 345145492 riscv-013.c:2496 log_memory_access(): M[0x4c6] reads 0x2837
+Debug: 3691 345145492 riscv-013.c:775 execute_abstract_command(): command=0x221009; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1009
+Debug: 3692 345145493 riscv-013.c:390 scan(): 41b w 00221009 @17 -> + 00000000 @04; 2i
+Debug: 3693 345145493 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221009 @17; 2i
+Debug: 3694 345145493 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3695 345145493 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3696 345145494 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3697 345145495 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + ffff8000 @04; 2i
+Debug: 3698 345145495 riscv-013.c:1458 register_read_direct(): {0} s1 = 0xffff8000
+Debug: 3699 345145495 riscv-013.c:2496 log_memory_access(): M[0x4c8] reads 0x8000
+Debug: 3700 345145495 riscv-013.c:2837 log_mem_access_result(): Succeeded to read memory via program buffer.
+Debug: 3701 345145495 riscv.c:1046 riscv_hit_watchpoint(): Next byte is 37
+Debug: 3702 345145496 riscv.c:1046 riscv_hit_watchpoint(): Next byte is 28
+Debug: 3703 345145496 riscv.c:1046 riscv_hit_watchpoint(): Next byte is 0
+Debug: 3704 345145496 riscv.c:1046 riscv_hit_watchpoint(): Next byte is 80
+Debug: 3705 345145496 riscv.c:1049 riscv_hit_watchpoint(): Full instruction is 80002837
+Debug: 3706 345145496 riscv.c:1075 riscv_hit_watchpoint(): 80002837 is not a RV32I load or store
+Debug: 3707 345145496 gdb_server.c:417 gdb_log_outgoing_packet(): [riscv.cpu] sending packet: $T02#b6
+Debug: 3708 345145496 target.c:1856 target_call_event_callbacks(): target event 1 (halted) for core riscv.cpu
+Debug: 3709 345145496 target.c:1856 target_call_event_callbacks(): target event 8 (gdb-end) for core riscv.cpu
+Debug: 3710 345145496 riscv.c:2199 riscv_openocd_poll(): polling all harts
+Debug: 3711 345145496 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3712 345145496 riscv.c:2121 riscv_poll_hart(): [riscv.cpu] polling hart 0, target->state=2
+Debug: 3713 345145497 riscv-013.c:390 scan(): 41b r 00000000 @11 -> + 00000000 @04; 2i
+Debug: 3714 345145497 riscv-013.c:390 scan(): 41b - 00000000 @11 -> + 00030382 @11; 2i
+Debug: 3715 345145497 riscv-013.c:400 scan():  ->  allresumeack anyresumeack allhalted anyhalted authenticated version=2
+Debug: 3716 345145497 gdb_server.c:401 gdb_log_incoming_packet(): [riscv.cpu] received packet: g
+Debug: 3717 345145497 riscv.c:1810 riscv_get_gdb_reg_list_internal(): [riscv.cpu] {0} reg_class=1, read=1
+Debug: 3718 345145497 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3719 345145497 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register zero
+Debug: 3720 345145497 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3721 345145497 riscv-013.c:775 execute_abstract_command(): command=0x221000; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1000
+Debug: 3722 345145498 riscv-013.c:390 scan(): 41b w 00221000 @17 -> + 00000000 @11; 2i
+Debug: 3723 345145499 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221000 @17; 2i
+Debug: 3724 345145499 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3725 345145499 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3726 345145500 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3727 345145500 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3728 345145500 riscv-013.c:1458 register_read_direct(): {0} zero = 0x0
+Debug: 3729 345145500 riscv.c:3814 riscv_get_register(): [riscv.cpu] zero: 0
+Debug: 3730 345145500 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from zero (valid=1)
+Debug: 3731 345145500 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register ra
+Debug: 3732 345145500 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3733 345145500 riscv-013.c:775 execute_abstract_command(): command=0x221001; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1001
+Debug: 3734 345145501 riscv-013.c:390 scan(): 41b w 00221001 @17 -> + 00000000 @04; 2i
+Debug: 3735 345145502 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221001 @17; 2i
+Debug: 3736 345145503 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3737 345145503 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3738 345145503 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3739 345145504 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 000003c4 @04; 2i
+Debug: 3740 345145504 riscv-013.c:1458 register_read_direct(): {0} ra = 0x3c4
+Debug: 3741 345145504 riscv.c:3814 riscv_get_register(): [riscv.cpu] ra: 3c4
+Debug: 3742 345145504 riscv.c:4194 register_get(): [riscv.cpu] read 0x000003c4 from ra (valid=1)
+Debug: 3743 345145504 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register sp
+Debug: 3744 345145504 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3745 345145504 riscv-013.c:775 execute_abstract_command(): command=0x221002; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1002
+Debug: 3746 345145504 riscv-013.c:390 scan(): 41b w 00221002 @17 -> + 00000000 @04; 2i
+Debug: 3747 345145504 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221002 @17; 2i
+Debug: 3748 345145505 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3749 345145505 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3750 345145506 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3751 345145506 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 2000ff30 @04; 2i
+Debug: 3752 345145506 riscv-013.c:1458 register_read_direct(): {0} sp = 0x2000ff30
+Debug: 3753 345145506 riscv.c:3814 riscv_get_register(): [riscv.cpu] sp: 2000ff30
+Debug: 3754 345145506 riscv.c:4194 register_get(): [riscv.cpu] read 0x2000ff30 from sp (valid=1)
+Debug: 3755 345145506 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register gp
+Debug: 3756 345145506 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3757 345145506 riscv-013.c:775 execute_abstract_command(): command=0x221003; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1003
+Debug: 3758 345145507 riscv-013.c:390 scan(): 41b w 00221003 @17 -> + 00000000 @04; 2i
+Debug: 3759 345145507 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221003 @17; 2i
+Debug: 3760 345145508 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3761 345145508 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3762 345145508 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3763 345145508 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 20000800 @04; 2i
+Debug: 3764 345145508 riscv-013.c:1458 register_read_direct(): {0} gp = 0x20000800
+Debug: 3765 345145508 riscv.c:3814 riscv_get_register(): [riscv.cpu] gp: 20000800
+Debug: 3766 345145508 riscv.c:4194 register_get(): [riscv.cpu] read 0x20000800 from gp (valid=1)
+Debug: 3767 345145508 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register tp
+Debug: 3768 345145508 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3769 345145508 riscv-013.c:775 execute_abstract_command(): command=0x221004; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1004
+Debug: 3770 345145509 riscv-013.c:390 scan(): 41b w 00221004 @17 -> + 00000000 @04; 2i
+Debug: 3771 345145510 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221004 @17; 2i
+Debug: 3772 345145510 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3773 345145510 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3774 345145511 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3775 345145512 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3776 345145512 riscv-013.c:1458 register_read_direct(): {0} tp = 0x0
+Debug: 3777 345145512 riscv.c:3814 riscv_get_register(): [riscv.cpu] tp: 0
+Debug: 3778 345145512 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from tp (valid=1)
+Debug: 3779 345145512 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register t0
+Debug: 3780 345145512 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3781 345145512 riscv-013.c:775 execute_abstract_command(): command=0x221005; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1005
+Debug: 3782 345145513 riscv-013.c:390 scan(): 41b w 00221005 @17 -> + 00000000 @04; 2i
+Debug: 3783 345145513 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221005 @17; 2i
+Debug: 3784 345145514 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3785 345145514 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3786 345145515 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3787 345145515 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000798 @04; 2i
+Debug: 3788 345145515 riscv-013.c:1458 register_read_direct(): {0} t0 = 0x798
+Debug: 3789 345145515 riscv.c:3814 riscv_get_register(): [riscv.cpu] t0: 798
+Debug: 3790 345145515 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000798 from t0 (valid=1)
+Debug: 3791 345145515 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register t1
+Debug: 3792 345145515 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3793 345145515 riscv-013.c:775 execute_abstract_command(): command=0x221006; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1006
+Debug: 3794 345145515 riscv-013.c:390 scan(): 41b w 00221006 @17 -> + 00000000 @04; 2i
+Debug: 3795 345145517 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221006 @17; 2i
+Debug: 3796 345145518 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3797 345145518 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3798 345145518 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3799 345145519 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 20000004 @04; 2i
+Debug: 3800 345145519 riscv-013.c:1458 register_read_direct(): {0} t1 = 0x20000004
+Debug: 3801 345145519 riscv.c:3814 riscv_get_register(): [riscv.cpu] t1: 20000004
+Debug: 3802 345145519 riscv.c:4194 register_get(): [riscv.cpu] read 0x20000004 from t1 (valid=1)
+Debug: 3803 345145519 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register t2
+Debug: 3804 345145519 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3805 345145519 riscv-013.c:775 execute_abstract_command(): command=0x221007; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1007
+Debug: 3806 345145519 riscv-013.c:390 scan(): 41b w 00221007 @17 -> + 00000000 @04; 2i
+Debug: 3807 345145520 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221007 @17; 2i
+Debug: 3808 345145521 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3809 345145521 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3810 345145521 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3811 345145522 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3812 345145522 riscv-013.c:1458 register_read_direct(): {0} t2 = 0x0
+Debug: 3813 345145522 riscv.c:3814 riscv_get_register(): [riscv.cpu] t2: 0
+Debug: 3814 345145522 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from t2 (valid=1)
+Debug: 3815 345145522 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register a0
+Debug: 3816 345145522 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3817 345145522 riscv-013.c:775 execute_abstract_command(): command=0x22100a; access register, size=32, postexec=0, transfer=1, write=0, regno=0x100a
+Debug: 3818 345145522 riscv-013.c:390 scan(): 41b w 0022100a @17 -> + 00000000 @04; 2i
+Debug: 3819 345145523 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 0022100a @17; 2i
+Debug: 3820 345145524 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3821 345145524 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3822 345145524 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3823 345145524 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 02faf080 @04; 2i
+Debug: 3824 345145524 riscv-013.c:1458 register_read_direct(): {0} a0 = 0x2faf080
+Debug: 3825 345145524 riscv.c:3814 riscv_get_register(): [riscv.cpu] a0: 2faf080
+Debug: 3826 345145524 riscv.c:4194 register_get(): [riscv.cpu] read 0x02faf080 from a0 (valid=1)
+Debug: 3827 345145524 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register a1
+Debug: 3828 345145524 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3829 345145524 riscv-013.c:775 execute_abstract_command(): command=0x22100b; access register, size=32, postexec=0, transfer=1, write=0, regno=0x100b
+Debug: 3830 345145525 riscv-013.c:390 scan(): 41b w 0022100b @17 -> + 00000000 @04; 2i
+Debug: 3831 345145525 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 0022100b @17; 2i
+Debug: 3832 345145525 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3833 345145525 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3834 345145525 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3835 345145526 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3836 345145526 riscv-013.c:1458 register_read_direct(): {0} a1 = 0x0
+Debug: 3837 345145526 riscv.c:3814 riscv_get_register(): [riscv.cpu] a1: 0
+Debug: 3838 345145526 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from a1 (valid=1)
+Debug: 3839 345145526 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register a2
+Debug: 3840 345145526 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3841 345145526 riscv-013.c:775 execute_abstract_command(): command=0x22100c; access register, size=32, postexec=0, transfer=1, write=0, regno=0x100c
+Debug: 3842 345145526 riscv-013.c:390 scan(): 41b w 0022100c @17 -> + 00000000 @04; 2i
+Debug: 3843 345145526 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 0022100c @17; 2i
+Debug: 3844 345145527 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3845 345145527 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3846 345145527 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3847 345145527 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000001 @04; 2i
+Debug: 3848 345145527 riscv-013.c:1458 register_read_direct(): {0} a2 = 0x1
+Debug: 3849 345145527 riscv.c:3814 riscv_get_register(): [riscv.cpu] a2: 1
+Debug: 3850 345145527 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000001 from a2 (valid=1)
+Debug: 3851 345145527 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register a3
+Debug: 3852 345145527 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3853 345145527 riscv-013.c:775 execute_abstract_command(): command=0x22100d; access register, size=32, postexec=0, transfer=1, write=0, regno=0x100d
+Debug: 3854 345145528 riscv-013.c:390 scan(): 41b w 0022100d @17 -> + 00000000 @04; 2i
+Debug: 3855 345145528 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 0022100d @17; 2i
+Debug: 3856 345145528 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3857 345145528 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3858 345145528 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3859 345145529 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 8000200c @04; 2i
+Debug: 3860 345145529 riscv-013.c:1458 register_read_direct(): {0} a3 = 0x8000200c
+Debug: 3861 345145529 riscv.c:3814 riscv_get_register(): [riscv.cpu] a3: 8000200c
+Debug: 3862 345145529 riscv.c:4194 register_get(): [riscv.cpu] read 0x8000200c from a3 (valid=1)
+Debug: 3863 345145529 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register a4
+Debug: 3864 345145529 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3865 345145529 riscv-013.c:775 execute_abstract_command(): command=0x22100e; access register, size=32, postexec=0, transfer=1, write=0, regno=0x100e
+Debug: 3866 345145529 riscv-013.c:390 scan(): 41b w 0022100e @17 -> + 00000000 @04; 2i
+Debug: 3867 345145529 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 0022100e @17; 2i
+Debug: 3868 345145530 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3869 345145530 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3870 345145531 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3871 345145531 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 02faf080 @04; 2i
+Debug: 3872 345145531 riscv-013.c:1458 register_read_direct(): {0} a4 = 0x2faf080
+Debug: 3873 345145531 riscv.c:3814 riscv_get_register(): [riscv.cpu] a4: 2faf080
+Debug: 3874 345145531 riscv.c:4194 register_get(): [riscv.cpu] read 0x02faf080 from a4 (valid=1)
+Debug: 3875 345145531 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register a5
+Debug: 3876 345145531 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3877 345145531 riscv-013.c:775 execute_abstract_command(): command=0x22100f; access register, size=32, postexec=0, transfer=1, write=0, regno=0x100f
+Debug: 3878 345145532 riscv-013.c:390 scan(): 41b w 0022100f @17 -> + 00000000 @04; 2i
+Debug: 3879 345145533 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 0022100f @17; 2i
+Debug: 3880 345145533 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3881 345145533 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3882 345145533 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3883 345145534 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3884 345145534 riscv-013.c:1458 register_read_direct(): {0} a5 = 0x0
+Debug: 3885 345145534 riscv.c:3814 riscv_get_register(): [riscv.cpu] a5: 0
+Debug: 3886 345145534 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from a5 (valid=1)
+Debug: 3887 345145534 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register a6
+Debug: 3888 345145534 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3889 345145534 riscv-013.c:775 execute_abstract_command(): command=0x221010; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1010
+Debug: 3890 345145534 riscv-013.c:390 scan(): 41b w 00221010 @17 -> + 00000000 @04; 2i
+Debug: 3891 345145534 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221010 @17; 2i
+Debug: 3892 345145534 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3893 345145534 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3894 345145535 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3895 345145535 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3896 345145535 riscv-013.c:1458 register_read_direct(): {0} a6 = 0x0
+Debug: 3897 345145535 riscv.c:3814 riscv_get_register(): [riscv.cpu] a6: 0
+Debug: 3898 345145535 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from a6 (valid=1)
+Debug: 3899 345145535 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register a7
+Debug: 3900 345145535 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3901 345145535 riscv-013.c:775 execute_abstract_command(): command=0x221011; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1011
+Debug: 3902 345145535 riscv-013.c:390 scan(): 41b w 00221011 @17 -> + 00000000 @04; 2i
+Debug: 3903 345145535 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221011 @17; 2i
+Debug: 3904 345145536 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3905 345145536 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3906 345145536 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3907 345145536 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00001242 @04; 2i
+Debug: 3908 345145536 riscv-013.c:1458 register_read_direct(): {0} a7 = 0x1242
+Debug: 3909 345145536 riscv.c:3814 riscv_get_register(): [riscv.cpu] a7: 1242
+Debug: 3910 345145536 riscv.c:4194 register_get(): [riscv.cpu] read 0x00001242 from a7 (valid=1)
+Debug: 3911 345145536 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register s2
+Debug: 3912 345145536 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3913 345145536 riscv-013.c:775 execute_abstract_command(): command=0x221012; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1012
+Debug: 3914 345145537 riscv-013.c:390 scan(): 41b w 00221012 @17 -> + 00000000 @04; 2i
+Debug: 3915 345145537 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221012 @17; 2i
+Debug: 3916 345145538 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3917 345145538 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3918 345145538 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3919 345145539 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3920 345145539 riscv-013.c:1458 register_read_direct(): {0} s2 = 0x0
+Debug: 3921 345145539 riscv.c:3814 riscv_get_register(): [riscv.cpu] s2: 0
+Debug: 3922 345145539 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from s2 (valid=1)
+Debug: 3923 345145539 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register s3
+Debug: 3924 345145539 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3925 345145539 riscv-013.c:775 execute_abstract_command(): command=0x221013; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1013
+Debug: 3926 345145539 riscv-013.c:390 scan(): 41b w 00221013 @17 -> + 00000000 @04; 2i
+Debug: 3927 345145540 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221013 @17; 2i
+Debug: 3928 345145540 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3929 345145540 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3930 345145540 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3931 345145541 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3932 345145541 riscv-013.c:1458 register_read_direct(): {0} s3 = 0x0
+Debug: 3933 345145541 riscv.c:3814 riscv_get_register(): [riscv.cpu] s3: 0
+Debug: 3934 345145541 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from s3 (valid=1)
+Debug: 3935 345145541 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register s4
+Debug: 3936 345145541 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3937 345145541 riscv-013.c:775 execute_abstract_command(): command=0x221014; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1014
+Debug: 3938 345145541 riscv-013.c:390 scan(): 41b w 00221014 @17 -> + 00000000 @04; 2i
+Debug: 3939 345145541 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221014 @17; 2i
+Debug: 3940 345145542 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3941 345145542 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3942 345145543 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3943 345145544 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3944 345145544 riscv-013.c:1458 register_read_direct(): {0} s4 = 0x0
+Debug: 3945 345145544 riscv.c:3814 riscv_get_register(): [riscv.cpu] s4: 0
+Debug: 3946 345145544 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from s4 (valid=1)
+Debug: 3947 345145544 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register s5
+Debug: 3948 345145544 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3949 345145544 riscv-013.c:775 execute_abstract_command(): command=0x221015; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1015
+Debug: 3950 345145545 riscv-013.c:390 scan(): 41b w 00221015 @17 -> + 00000000 @04; 2i
+Debug: 3951 345145545 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221015 @17; 2i
+Debug: 3952 345145546 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3953 345145546 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3954 345145546 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3955 345145547 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3956 345145547 riscv-013.c:1458 register_read_direct(): {0} s5 = 0x0
+Debug: 3957 345145547 riscv.c:3814 riscv_get_register(): [riscv.cpu] s5: 0
+Debug: 3958 345145547 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from s5 (valid=1)
+Debug: 3959 345145547 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register s6
+Debug: 3960 345145547 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3961 345145547 riscv-013.c:775 execute_abstract_command(): command=0x221016; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1016
+Debug: 3962 345145548 riscv-013.c:390 scan(): 41b w 00221016 @17 -> + 00000000 @04; 2i
+Debug: 3963 345145549 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221016 @17; 2i
+Debug: 3964 345145549 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3965 345145549 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3966 345145550 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3967 345145550 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3968 345145550 riscv-013.c:1458 register_read_direct(): {0} s6 = 0x0
+Debug: 3969 345145550 riscv.c:3814 riscv_get_register(): [riscv.cpu] s6: 0
+Debug: 3970 345145550 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from s6 (valid=1)
+Debug: 3971 345145550 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register s7
+Debug: 3972 345145550 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3973 345145551 riscv-013.c:775 execute_abstract_command(): command=0x221017; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1017
+Debug: 3974 345145552 riscv-013.c:390 scan(): 41b w 00221017 @17 -> + 00000000 @04; 2i
+Debug: 3975 345145552 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221017 @17; 2i
+Debug: 3976 345145553 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3977 345145553 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3978 345145554 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3979 345145554 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3980 345145554 riscv-013.c:1458 register_read_direct(): {0} s7 = 0x0
+Debug: 3981 345145554 riscv.c:3814 riscv_get_register(): [riscv.cpu] s7: 0
+Debug: 3982 345145554 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from s7 (valid=1)
+Debug: 3983 345145554 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register s8
+Debug: 3984 345145554 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3985 345145554 riscv-013.c:775 execute_abstract_command(): command=0x221018; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1018
+Debug: 3986 345145554 riscv-013.c:390 scan(): 41b w 00221018 @17 -> + 00000000 @04; 2i
+Debug: 3987 345145555 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221018 @17; 2i
+Debug: 3988 345145556 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 3989 345145556 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 3990 345145557 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 3991 345145558 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 3992 345145558 riscv-013.c:1458 register_read_direct(): {0} s8 = 0x0
+Debug: 3993 345145558 riscv.c:3814 riscv_get_register(): [riscv.cpu] s8: 0
+Debug: 3994 345145558 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from s8 (valid=1)
+Debug: 3995 345145558 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register s9
+Debug: 3996 345145558 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 3997 345145558 riscv-013.c:775 execute_abstract_command(): command=0x221019; access register, size=32, postexec=0, transfer=1, write=0, regno=0x1019
+Debug: 3998 345145558 riscv-013.c:390 scan(): 41b w 00221019 @17 -> + 00000000 @04; 2i
+Debug: 3999 345145558 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 00221019 @17; 2i
+Debug: 4000 345145560 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4001 345145560 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4002 345145560 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 4003 345145561 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 4004 345145561 riscv-013.c:1458 register_read_direct(): {0} s9 = 0x0
+Debug: 4005 345145561 riscv.c:3814 riscv_get_register(): [riscv.cpu] s9: 0
+Debug: 4006 345145561 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from s9 (valid=1)
+Debug: 4007 345145561 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register s10
+Debug: 4008 345145561 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 4009 345145561 riscv-013.c:775 execute_abstract_command(): command=0x22101a; access register, size=32, postexec=0, transfer=1, write=0, regno=0x101a
+Debug: 4010 345145562 riscv-013.c:390 scan(): 41b w 0022101a @17 -> + 00000000 @04; 2i
+Debug: 4011 345145563 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 0022101a @17; 2i
+Debug: 4012 345145563 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4013 345145563 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4014 345145564 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 4015 345145565 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 2000001c @04; 2i
+Debug: 4016 345145565 riscv-013.c:1458 register_read_direct(): {0} s10 = 0x2000001c
+Debug: 4017 345145565 riscv.c:3814 riscv_get_register(): [riscv.cpu] s10: 2000001c
+Debug: 4018 345145565 riscv.c:4194 register_get(): [riscv.cpu] read 0x2000001c from s10 (valid=1)
+Debug: 4019 345145565 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register s11
+Debug: 4020 345145565 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 4021 345145565 riscv-013.c:775 execute_abstract_command(): command=0x22101b; access register, size=32, postexec=0, transfer=1, write=0, regno=0x101b
+Debug: 4022 345145565 riscv-013.c:390 scan(): 41b w 0022101b @17 -> + 00000000 @04; 2i
+Debug: 4023 345145565 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 0022101b @17; 2i
+Debug: 4024 345145566 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4025 345145566 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4026 345145567 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 4027 345145568 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 20000018 @04; 2i
+Debug: 4028 345145568 riscv-013.c:1458 register_read_direct(): {0} s11 = 0x20000018
+Debug: 4029 345145568 riscv.c:3814 riscv_get_register(): [riscv.cpu] s11: 20000018
+Debug: 4030 345145568 riscv.c:4194 register_get(): [riscv.cpu] read 0x20000018 from s11 (valid=1)
+Debug: 4031 345145568 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register t3
+Debug: 4032 345145568 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 4033 345145568 riscv-013.c:775 execute_abstract_command(): command=0x22101c; access register, size=32, postexec=0, transfer=1, write=0, regno=0x101c
+Debug: 4034 345145569 riscv-013.c:390 scan(): 41b w 0022101c @17 -> + 00000000 @04; 2i
+Debug: 4035 345145570 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 0022101c @17; 2i
+Debug: 4036 345145570 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4037 345145570 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4038 345145571 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 4039 345145572 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 4040 345145572 riscv-013.c:1458 register_read_direct(): {0} t3 = 0x0
+Debug: 4041 345145572 riscv.c:3814 riscv_get_register(): [riscv.cpu] t3: 0
+Debug: 4042 345145572 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from t3 (valid=1)
+Debug: 4043 345145572 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register t4
+Debug: 4044 345145572 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 4045 345145572 riscv-013.c:775 execute_abstract_command(): command=0x22101d; access register, size=32, postexec=0, transfer=1, write=0, regno=0x101d
+Debug: 4046 345145572 riscv-013.c:390 scan(): 41b w 0022101d @17 -> + 00000000 @04; 2i
+Debug: 4047 345145573 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 0022101d @17; 2i
+Debug: 4048 345145574 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4049 345145574 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4050 345145574 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 4051 345145575 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 4052 345145575 riscv-013.c:1458 register_read_direct(): {0} t4 = 0x0
+Debug: 4053 345145575 riscv.c:3814 riscv_get_register(): [riscv.cpu] t4: 0
+Debug: 4054 345145575 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from t4 (valid=1)
+Debug: 4055 345145575 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register t5
+Debug: 4056 345145575 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 4057 345145575 riscv-013.c:775 execute_abstract_command(): command=0x22101e; access register, size=32, postexec=0, transfer=1, write=0, regno=0x101e
+Debug: 4058 345145576 riscv-013.c:390 scan(): 41b w 0022101e @17 -> + 00000000 @04; 2i
+Debug: 4059 345145577 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 0022101e @17; 2i
+Debug: 4060 345145578 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4061 345145578 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4062 345145578 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 4063 345145579 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 4064 345145579 riscv-013.c:1458 register_read_direct(): {0} t5 = 0x0
+Debug: 4065 345145579 riscv.c:3814 riscv_get_register(): [riscv.cpu] t5: 0
+Debug: 4066 345145579 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from t5 (valid=1)
+Debug: 4067 345145579 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register t6
+Debug: 4068 345145579 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 4069 345145579 riscv-013.c:775 execute_abstract_command(): command=0x22101f; access register, size=32, postexec=0, transfer=1, write=0, regno=0x101f
+Debug: 4070 345145580 riscv-013.c:390 scan(): 41b w 0022101f @17 -> + 00000000 @04; 2i
+Debug: 4071 345145581 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 0022101f @17; 2i
+Debug: 4072 345145581 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4073 345145581 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4074 345145582 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 4075 345145582 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 4076 345145582 riscv-013.c:1458 register_read_direct(): {0} t6 = 0x0
+Debug: 4077 345145582 riscv.c:3814 riscv_get_register(): [riscv.cpu] t6: 0
+Debug: 4078 345145582 riscv.c:4194 register_get(): [riscv.cpu] read 0x00000000 from t6 (valid=1)
+Debug: 4079 345145582 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register pc
+Debug: 4080 345145582 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 4081 345145582 riscv-013.c:775 execute_abstract_command(): command=0x2207b1; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7b1
+Debug: 4082 345145582 riscv-013.c:390 scan(): 41b w 002207b1 @17 -> + 00000000 @04; 2i
+Debug: 4083 345145583 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207b1 @17; 2i
+Debug: 4084 345145583 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4085 345145583 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4086 345145584 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 4087 345145584 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 000004c6 @04; 2i
+Debug: 4088 345145584 riscv-013.c:1458 register_read_direct(): {0} dpc = 0x4c6
+Debug: 4089 345145584 riscv-013.c:4055 riscv013_get_register(): [0] read PC from DPC: 0x4c6
+Debug: 4090 345145584 riscv.c:3814 riscv_get_register(): [riscv.cpu] pc: 4c6
+Debug: 4091 345145584 riscv.c:4194 register_get(): [riscv.cpu] read 0x000004c6 from pc (valid=0)
+Debug: 4092 345145584 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register pc
+Debug: 4093 345145584 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 4094 345145584 riscv-013.c:775 execute_abstract_command(): command=0x2207b1; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7b1
+Debug: 4095 345145585 riscv-013.c:390 scan(): 41b w 002207b1 @17 -> + 00000000 @04; 2i
+Debug: 4096 345145586 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207b1 @17; 2i
+Debug: 4097 345145587 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4098 345145588 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4099 345145589 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 4100 345145589 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 000004c6 @04; 2i
+Debug: 4101 345145589 riscv-013.c:1458 register_read_direct(): {0} dpc = 0x4c6
+Debug: 4102 345145589 riscv-013.c:4055 riscv013_get_register(): [0] read PC from DPC: 0x4c6
+Debug: 4103 345145589 riscv.c:3814 riscv_get_register(): [riscv.cpu] pc: 4c6
+Debug: 4104 345145589 riscv.c:4194 register_get(): [riscv.cpu] read 0x000004c6 from pc (valid=0)
+Debug: 4105 345145589 gdb_server.c:417 gdb_log_outgoing_packet(): [riscv.cpu] sending packet: $00000000c403000030ff0020000800200000000098070000040000200000000050ff00200000000080f0fa0200000000010000000c20008080f0fa0200000000000000004212000000000000000000000000000000000000000000000000000000000000000000001c0000201800002000000000000000000000000000000000c6040000#d9
+Debug: 4106 345145590 gdb_server.c:401 gdb_log_incoming_packet(): [riscv.cpu] received packet: qXfer:threads:read::0,1000
+Debug: 4107 345145590 gdb_server.c:414 gdb_log_outgoing_packet(): [riscv.cpu] sending packet: $<binary-data-44-bytes>#02
+Debug: 4108 345145590 gdb_server.c:401 gdb_log_incoming_packet(): [riscv.cpu] received packet: z1,4c6,2
+Debug: 4109 345145590 gdb_server.c:1748 gdb_breakpoint_watchpoint_packet(): [riscv.cpu]
+Debug: 4110 345145590 riscv.c:862 remove_trigger(): [0] Stop using resource 0 for bp 3
+Debug: 4111 345145590 riscv-013.c:4045 riscv013_get_register(): [riscv.cpu] reading register tselect
+Debug: 4112 345145590 riscv.c:3657 riscv_set_current_hartid(): setting hartid to 0, was 0
+Debug: 4113 345145590 riscv-013.c:775 execute_abstract_command(): command=0x2207a0; access register, size=32, postexec=0, transfer=1, write=0, regno=0x7a0
+Debug: 4114 345145591 riscv-013.c:390 scan(): 41b w 002207a0 @17 -> + 00000000 @04; 2i
+Debug: 4115 345145592 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002207a0 @17; 2i
+Debug: 4116 345145592 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4117 345145592 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4118 345145593 riscv-013.c:390 scan(): 41b r 00000000 @04 -> + 00000000 @16; 2i
+Debug: 4119 345145593 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 4120 345145593 riscv-013.c:1458 register_read_direct(): {0} tselect = 0x0
+Debug: 4121 345145593 riscv.c:3814 riscv_get_register(): [riscv.cpu] tselect: 0
+Debug: 4122 345145593 riscv.c:3751 riscv_set_register(): [riscv.cpu] tselect <- 0
+Debug: 4123 345145593 riscv-013.c:4074 riscv013_set_register(): [0] writing 0x0 to register tselect
+Debug: 4124 345145593 riscv-013.c:1293 register_write_direct(): {0} tselect <- 0x0
+Debug: 4125 345145594 riscv-013.c:390 scan(): 41b w 00000000 @04 -> + 00000000 @04; 2i
+Debug: 4126 345145594 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 4127 345145594 riscv-013.c:775 execute_abstract_command(): command=0x2307a0; access register, size=32, postexec=0, transfer=1, write=1, regno=0x7a0
+Debug: 4128 345145595 riscv-013.c:390 scan(): 41b w 002307a0 @17 -> + 00000000 @04; 2i
+Debug: 4129 345145596 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002307a0 @17; 2i
+Debug: 4130 345145596 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4131 345145596 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4132 345145596 riscv.c:3772 riscv_set_register(): [riscv.cpu] wrote 0x0 to tselect valid=0
+Debug: 4133 345145596 riscv.c:3751 riscv_set_register(): [riscv.cpu] tdata1 <- 0
+Debug: 4134 345145596 riscv-013.c:4074 riscv013_set_register(): [0] writing 0x0 to register tdata1
+Debug: 4135 345145596 riscv-013.c:1293 register_write_direct(): {0} tdata1 <- 0x0
+Debug: 4136 345145597 riscv-013.c:390 scan(): 41b w 00000000 @04 -> + 00000000 @16; 2i
+Debug: 4137 345145597 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 4138 345145597 riscv-013.c:775 execute_abstract_command(): command=0x2307a1; access register, size=32, postexec=0, transfer=1, write=1, regno=0x7a1
+Debug: 4139 345145598 riscv-013.c:390 scan(): 41b w 002307a1 @17 -> + 00000000 @04; 2i
+Debug: 4140 345145598 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002307a1 @17; 2i
+Debug: 4141 345145599 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4142 345145599 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4143 345145599 riscv.c:3772 riscv_set_register(): [riscv.cpu] wrote 0x0 to tdata1 valid=0
+Debug: 4144 345145599 riscv.c:3751 riscv_set_register(): [riscv.cpu] tselect <- 0
+Debug: 4145 345145599 riscv-013.c:4074 riscv013_set_register(): [0] writing 0x0 to register tselect
+Debug: 4146 345145599 riscv-013.c:1293 register_write_direct(): {0} tselect <- 0x0
+Debug: 4147 345145599 riscv-013.c:390 scan(): 41b w 00000000 @04 -> + 00000000 @16; 2i
+Debug: 4148 345145600 riscv-013.c:390 scan(): 41b - 00000000 @04 -> + 00000000 @04; 2i
+Debug: 4149 345145600 riscv-013.c:775 execute_abstract_command(): command=0x2307a0; access register, size=32, postexec=0, transfer=1, write=1, regno=0x7a0
+Debug: 4150 345145600 riscv-013.c:390 scan(): 41b w 002307a0 @17 -> + 00000000 @04; 2i
+Debug: 4151 345145601 riscv-013.c:390 scan(): 41b r 00000000 @16 -> + 002307a0 @17; 2i
+Debug: 4152 345145602 riscv-013.c:390 scan(): 41b - 00000000 @16 -> + 08000002 @16; 2i
+Debug: 4153 345145602 riscv-013.c:400 scan():  ->  progbufsize=8 datacount=2
+Debug: 4154 345145602 riscv.c:3772 riscv_set_register(): [riscv.cpu] wrote 0x0 to tselect valid=0
+Debug: 4155 345145602 breakpoints.c:306 breakpoint_free(): free BPID: 3 --> 0
+Debug: 4156 345145602 gdb_server.c:417 gdb_log_outgoing_packet(): [riscv.cpu] sending packet: $OK#9a
+
+
+
